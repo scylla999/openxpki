@@ -1,0 +1,102 @@
+head:
+    prefix: expkcs12
+    label: I18N_OPENXPKI_UI_WORKFLOW_TYPE_OPENVPN_EXPORT_LABEL
+    description: I18N_OPENXPKI_UI_WORKFLOW_TYPE_OPENVPN_EXPORT_DESC
+    persister: Volatile
+
+state:
+    INITIAL:
+        action:
+          - initialize > GENERATE
+
+    GENERATE:
+        autorun: 1
+        action:
+          - generate export setfile > SUCCESS ? global_is_certificate_owner
+          - global_noop > FAILURE ? !global_is_certificate_owner
+
+
+    FAILURE:
+        label: I18N_OPENXPKI_UI_WORKFLOW_STATE_OPENVPN_EXPORT_SUCCESS_LABEL
+        description: I18N_OPENXPKI_UI_WORKFLOW_STATE_OPENVPN_EXPORT_SUCCESS_DESC
+        output: 
+          - cert_identifier
+
+    SUCCESS:
+        label: I18N_OPENXPKI_UI_WORKFLOW_STATE_OPENVPN_EXPORT_SUCCESS_LABEL
+        description: I18N_OPENXPKI_UI_WORKFLOW_STATE_OPENVPN_EXPORT_SUCCESS_DESC
+        output: 
+         - download
+
+action:
+    initialize:
+        class: OpenXPKI::Server::Workflow::Activity::Noop
+        label: I18N_OPENXPKI_UI_WORKFLOW_ACTION_OPENVPN_EXPORT_INITIALIZE_LABEL
+        description: I18N_OPENXPKI_UI_WORKFLOW_ACTION_OPENVPN_EXPORT_INITIALIZE_DESC
+        input:
+          - cert_identifier
+          - key_format
+          - _password
+        validator: 
+          - global_cert_identifier_exists
+
+
+    generate:
+        class: OpenXPKI::Server::Workflow::Activity::Tools::CertificateExport
+        param: 
+          key_format: PKCS12
+          _map_cert_identifier: $cert_identifier
+          _map_key_password: $_password
+          template: "[% key %]"
+
+    export:  
+        class: OpenXPKI::Server::Workflow::Activity::Tools::ExportToFile
+        param:
+            _map_value: $certificate_export
+
+    setfile:
+        class: OpenXPKI::Server::Workflow::Activity::Tools::SetContextHash
+        param:
+          target_key: download
+          _map_filename: "[% USE Certificate %][% Certificate.dn(context.cert_identifier, 'CN') %].p12"
+          _map_file: $export_filename
+
+
+field: 
+    download:
+        label: I18N_OPENXPKI_UI_OPENVPN_EXPORT_FILENAME_LABEL
+        name: download
+        format: download/text/plain
+
+    key_format:
+        name: key_format
+        label: I18N_OPENXPKI_UI_OPENVPN_EXPORT_KEY_FORMAT_LABEL
+        description: I18N_OPENXPKI_UI_OPENVPN_EXPORT_KEY_FORMAT_DESC
+        type: select
+        required: 1
+        option:
+          item:
+            - OPENSSL_PRIVKEY
+            - PKCS8_PEM
+          label: I18N_OPENXPKI_UI_OPENVPN_EXPORT_KEY_FORMAT
+
+    _password:
+        name: _password
+        type: password
+        default: S3cret16
+        label: I18N_OPENXPKI_UI_OPENVPN_EXPORT_PASSWORD_LABEL
+        description: I18N_OPENXPKI_UI_OPENVPN_EXPORT_PASSWORD_DESC
+
+acl:
+    CA Operator:
+        creator: any
+
+    RA Operator:
+        creator: any
+        fail: 1
+        resume: 1
+        wakeup: 1
+
+    System:
+        creator: any
+
