@@ -37,7 +37,7 @@ sub START {
         );
     }
     # if no alias is specified, use the default
-    unless (length($alias_of{$ident} > 0) {
+    unless (length($alias_of{$ident}) > 0) {
         $alias_of{$ident} = "key";
     }
     
