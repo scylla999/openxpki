@@ -23,8 +23,8 @@ msgid "I18N_OPENXPKI_UI_ACTION_NOT_FOUND"
 msgstr "Requested action not found"
 
 #, fuzzy
-msgid "I18N_OPENXPKI_UI_ALIAS_EMPTY_OR_CONTAINING_ILLEGAL_CHARACTERS"
-msgstr "Alias is empty or does contain illegal characters"
+msgid "I18N_OPENXPKI_UI_ALIAS_CONTAINING_ILLEGAL_CHARACTERS"
+msgstr "Alias does contain illegal characters"
 
 msgid "I18N_OPENXPKI_UI_APPLICATION_ERROR"
 msgstr "Unknown application error"

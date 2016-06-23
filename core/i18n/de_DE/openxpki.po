@@ -22,8 +22,8 @@ msgid "I18N_OPENXPKI_UI_ACTION_NOT_FOUND"
 msgstr "testuser"
 
 #, fuzzy
-msgid "I18N_OPENXPKI_UI_ALIAS_EMPTY_OR_CONTAINING_ILLEGAL_CHARACTERS"
-msgstr "Alias ist nicht gesetzt oder enthält ungültige Zeichen"
+msgid "I18N_OPENXPKI_UI_ALIAS_CONTAINING_ILLEGAL_CHARACTERS"
+msgstr "Alias enthält ungültige Zeichen"
 
 #, fuzzy
 msgid "I18N_OPENXPKI_UI_APPLICATION_ERROR"

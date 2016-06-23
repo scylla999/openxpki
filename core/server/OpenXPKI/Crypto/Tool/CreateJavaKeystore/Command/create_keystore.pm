@@ -30,11 +30,15 @@ sub START {
     $alias_of   {$ident} = $arg_ref->{ALIAS};
 
     # Sanitizing $alias, must not contain blanks etc., to play it save,
-    # restrict to word characters and "-" and make sure it's not empty
-    unless ($alias =~ m/^[\-\w]+/) {
+    # restrict to word characters and "-"; empty alias is allowed
+    unless ($alias_of{$ident} =~ m/^[\-\w]*$/) {
         OpenXPKI::Exception->throw (
-            message => "I18N_OPENXPKI_UI_ALIAS_EMPTY_OR_CONTAINING_ILLEGAL_CHARACTERS",
+            message => "I18N_OPENXPKI_UI_ALIAS_CONTAINING_ILLEGAL_CHARACTERS",
         );
+    }
+    # if no alias is specified, use the default
+    unless (length($alias_of{$ident} > 0) {
+        $alias_of{$ident} = "key";
     }
     
     # the PKCS#12,  encrypted with PASS

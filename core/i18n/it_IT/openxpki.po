@@ -24,7 +24,7 @@ msgid "I18N_OPENXPKI_UI_ACTION_NOT_FOUND"
 msgstr "Azione richiesta non trovata"
 
 #, fuzzy
-msgid "I18N_OPENXPKI_UI_ALIAS_EMPTY_OR_CONTAINING_ILLEGAL_CHARACTERS"
+msgid "I18N_OPENXPKI_UI_ALIAS_CONTAINING_ILLEGAL_CHARACTERS"
 msgstr "Uno o più campi Soggetto contengono errori."
 
 msgid "I18N_OPENXPKI_UI_APPLICATION_ERROR"

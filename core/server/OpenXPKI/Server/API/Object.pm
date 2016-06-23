@@ -1099,6 +1099,7 @@ sub get_private_key_for_cert {
     my $identifier = $arg_ref->{IDENTIFIER};
     my $format     = $arg_ref->{FORMAT};
     my $password   = $arg_ref->{PASSWORD};
+    my $alias      = ($arg_ref->{ALIAS}) ? $arg_ref->{ALIAS} : '';
 
     my $default_token = CTX('api')->get_default_token();
     ##! 4: 'identifier: ' . $identifier
@@ -1184,6 +1185,7 @@ sub get_private_key_for_cert {
                 PKCS12       => $pkcs12,          
                 PASSWD       => $password,
                 OUT_PASSWD   => $password,
+                ALIAS        => $alias,
             }
         );
     }
