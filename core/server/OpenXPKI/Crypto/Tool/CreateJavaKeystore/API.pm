@@ -32,6 +32,7 @@ sub __init_command_params : PRIVATE {
                                'CERTIFICATES' => 1,
                                'PASSWD'     => 1,
                                'OUT_PASSWD'     => 0,
+                               'ALIAS'     => 0,
                              },
     });
 }

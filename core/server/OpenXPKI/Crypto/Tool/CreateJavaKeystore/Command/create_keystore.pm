@@ -19,6 +19,7 @@ my %tmp_of      :ATTR;
 my %pkcs12_of    :ATTR;
 my %password_of :ATTR;
 my %password_out_of :ATTR;
+my %alias_of        :ATTR;
 
 sub START {
     my ($self, $ident, $arg_ref) = @_;
@@ -26,6 +27,15 @@ sub START {
     # FileUtils and tmp
     $fu_of      {$ident} = OpenXPKI::FileUtils->new();
     $tmp_of     {$ident} = $arg_ref->{TMP};
+    $alias_of   {$ident} = $arg_ref->{ALIAS};
+
+    # Sanitizing $alias, must not contain blanks etc., to play it save,
+    # restrict to word characters and "-" and make sure it's not empty
+    unless ($alias =~ m/^[\-\w]+/) {
+        OpenXPKI::Exception->throw (
+            message => "I18N_OPENXPKI_UI_ALIAS_EMPTY_OR_CONTAINING_ILLEGAL_CHARACTERS",
+        );
+    }
     
     # the PKCS#12,  encrypted with PASS
     $pkcs12_of   {$ident} = $arg_ref->{PKCS12};
@@ -61,7 +71,7 @@ sub get_command {
         CONTENT  => $pkcs12_of{$ident},
         FORCE    => 1,
     });
-    
+
     #$self->set_env ("jkspass" => $self->{PASSWD});
     #$self->set_env ("p12pass" => $self->{PASSWD});
     
@@ -71,6 +81,7 @@ sub get_command {
     my $command = "-importkeystore ";
     $command .= " -srcstoretype PKCS12 -srcstorepass:env p12pass -srckeystore " . $pkcs12;
     $command .= " -deststoretype JKS -storepass:env jkspass -destkeystore ". $outfile_of{$ident};  
+    $command .= " -destalias ". $alias_of{$ident};
 
     return [ $command ];
     
