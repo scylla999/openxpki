@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-09-08 14:02+0200\n"
 "PO-Revision-Date: 2018-07-09 08:55+0200\n"
-"Last-Translator: Luc Lalonde <Luc.Lalonde@polymtl.ca>\n"
+"Last-Translator: Luc Lalonde <lalonde.luc@gmail.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -117,11 +117,11 @@ msgstr "Recherche de certificat"
 
 msgid "I18N_OPENXPKI_UI_CERTIFICATE_SEARCH_RESULT_DESC"
 msgstr ""
-"Certificates matching your search, click on a row to display detailed "
-"information."
+"Certificats correspondant à votre recherche, cliquez sur une ligne "
+"pour afficher les informations détaillées."
 
 msgid "I18N_OPENXPKI_UI_CERTIFICATE_SEARCH_RESULT_LABEL"
-msgstr "Certificate Search Result"
+msgstr "Résultat de recherche de certificat"
 
 msgid "I18N_OPENXPKI_UI_CERTIFICATE_SERIAL"
 msgstr "Numéro de série du certificat"
@@ -133,7 +133,7 @@ msgid "I18N_OPENXPKI_UI_CERTIFICATE_SUBJECT"
 msgstr "Sujet"
 
 msgid "I18N_OPENXPKI_UI_CERTIFICATE_VALIDITY"
-msgstr "Validity"
+msgstr "Validité"
 
 msgid "I18N_OPENXPKI_UI_CERTIFICATE_VALIDITY_INVALID_GT"
 msgstr "invalide après"
@@ -180,7 +180,7 @@ msgstr ""
 "inclus dans cette liste!"
 
 msgid "I18N_OPENXPKI_UI_CERT_RELATED_HINT"
-msgstr "Afficher flux liés"
+msgstr "Afficher workflow liés"
 
 msgid "I18N_OPENXPKI_UI_CERT_RELATED_LABEL"
 msgstr "Relations"
@@ -249,34 +249,34 @@ msgid "I18N_OPENXPKI_UI_CRL_LAST_UPDATE"
 msgstr "Dernière mise à jour"
 
 msgid "I18N_OPENXPKI_UI_CRL_LIST_FOR_ISSUER"
-msgstr "Certificate Revocation Lists for Issuer"
+msgstr "Listes de révocation de certificats pour l'émetteur"
 
 msgid "I18N_OPENXPKI_UI_CRL_LIST_OLD"
-msgstr "show older revocation lists"
+msgstr "afficher les anciennes listes de révocation"
 
 msgid "I18N_OPENXPKI_UI_CRL_LIST_VIEW_DETAIL"
-msgstr "Certificate Revocation List"
+msgstr "Liste de révocation de certificats"
 
 msgid "I18N_OPENXPKI_UI_CRL_NEXT_UPDATE"
-msgstr "Next Update / Expires"
+msgstr "Prochaine mise à jour / expire"
 
 msgid "I18N_OPENXPKI_UI_CRL_NONE_FOR_CA"
-msgstr "No CRLs have been issued by this authority, yet."
+msgstr "Aucune CRL n'a encore été émise par cette autorité."
 
 msgid "I18N_OPENXPKI_UI_CRL_SERIAL"
-msgstr "CRL Serial"
+msgstr "Numéro de série du CRL"
 
 msgid "I18N_OPENXPKI_UI_CRL_VIEW_IN_BROWSER"
-msgstr "show details in brower"
+msgstr "afficher les détails dans le navigateur"
 
 msgid "I18N_OPENXPKI_UI_CSR_EXT_CERTIFICATE_TEMPLATE"
-msgstr "Certificate Template"
+msgstr "Modèle de certificat"
 
 msgid "I18N_OPENXPKI_UI_CSR_EXT_CHALLENGE_PASSWORD"
-msgstr "Challenge password"
+msgstr "Mot de passe par défi-réponse"
 
 msgid "I18N_OPENXPKI_UI_DELAYED_REVOCATION_REQUESTED"
-msgstr "Delayed revocation requested."
+msgstr "Révocation différée demandée."
 
 msgid "I18N_OPENXPKI_UI_DOWNLOAD_BUNDLE"
 msgstr "Download chain as PEM bundle, including root"
@@ -633,7 +633,7 @@ msgid "I18N_OPENXPKI_UI_MENU_MY_TASK"
 msgstr "Mes Tâches"
 
 msgid "I18N_OPENXPKI_UI_MENU_MY_WORKFLOW"
-msgstr "Mes flux"
+msgstr "Mes workflow"
 
 msgid "I18N_OPENXPKI_UI_MENU_PKI_OPERATION"
 msgstr "Opération PKI"
@@ -661,7 +661,7 @@ msgid "I18N_OPENXPKI_UI_MENU_REVOKE_CERTIFICATE"
 msgstr "Revocation de certificat"
 
 msgid "I18N_OPENXPKI_UI_MENU_SCEP_SEARCH"
-msgstr "Recherche de flux SCEP"
+msgstr "Recherche de workflow SCEP"
 
 # Remove?
 msgid "I18N_OPENXPKI_UI_MENU_SET_MOTD"
@@ -672,13 +672,13 @@ msgid "I18N_OPENXPKI_UI_MENU_SYSTEM_STATUS"
 msgstr "Statut du système"
 
 msgid "I18N_OPENXPKI_UI_MENU_WORKFLOW_SEARCH"
-msgstr "Recherche de flux"
+msgstr "Recherche de workflow"
 
 msgid "I18N_OPENXPKI_UI_MY_WORKFLOW_DESCRIPTION"
-msgstr "Cette page énumère les flux que vous avez initié."
+msgstr "Cette page énumère les workflow que vous avez initié."
 
 msgid "I18N_OPENXPKI_UI_MY_WORKFLOW_TITLE"
-msgstr "Mes flux"
+msgstr "Mes workflow"
 
 # Remove?
 msgid "I18N_OPENXPKI_UI_NO"
@@ -2200,7 +2200,7 @@ msgstr ""
 "certificate from the list by clicking on it."
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_FIELD_REPLACE_CERT_IDENTIFIER_DESC"
-msgstr "Le certificat qui sera remplacé par ce flux."
+msgstr "Le certificat qui sera remplacé par ce workflow."
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_FIELD_REPLACE_CERT_IDENTIFIER_LABEL"
 msgstr "Certicat remplacé"
@@ -2210,7 +2210,7 @@ msgstr "Mode de requête"
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_FIELD_RUN_IN_BACKGROUND_DESC"
 msgstr ""
-"Cochez cette case pour séparer le flux de l'interface de gestion (UI) et "
+"Cochez cette case pour séparer le workflow de l'interface de gestion (UI) et "
 "exécuter en arrière plan."
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_FIELD_RUN_IN_BACKGROUND_LABEL"
@@ -2610,13 +2610,13 @@ msgid "I18N_OPENXPKI_UI_WORKFLOW_STATE_CRR_BY_ENTITY_PENDING_LABEL"
 msgstr "Approbation en attente"
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_STATE_CRR_CANCELED_DESC"
-msgstr "Ce flux a été annulé."
+msgstr "Ce workflow a été annulé."
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_STATE_CRR_CANCELED_LABEL"
 msgstr "ANNULÉ"
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_STATE_CRR_FAILURE_DESC"
-msgstr "Ce flux a subit un échec finallement"
+msgstr "Ce workflow a subit un échec finallement"
 
 msgid "I18N_OPENXPKI_UI_WORKFLOW_STATE_CRR_FAILURE_LABEL"
 msgstr "ÉCHEC"
